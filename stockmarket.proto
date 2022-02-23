@@ -1,0 +1,57 @@
+syntax = "proto2";
+
+package bovespa;
+
+message Oferta {
+    required int32 quantidade = 1;
+    required int32 preco = 2;
+}
+
+message MsgNegociacao {
+    required string ativo = 1;
+    required Oferta oferta = 2;
+}
+
+message MsgInfo {
+    required string ativo = 1;
+    optional bool notificacao = 2;
+}
+
+message MsgAutenticacao {
+    required string usuario = 1;
+    required string senha = 2;
+}
+
+message MsgComando {
+    oneof msg {
+        MsgNegociacao compra = 1;
+        MsgNegociacao venda = 2;
+        MsgNegociacao cancelar_compra = 3;
+        MsgNegociacao cancelar_venda = 4;
+        MsgInfo info = 5;
+        MsgAutenticacao autenticacao = 6;
+        bool saida = 7;
+    }
+}
+
+message MsgNotificacaoInfo {
+    required string ativo = 1;
+    required int32 ultimo_preco = 2;
+    repeated Oferta compras = 3;
+    repeated Oferta vendas = 4;
+}
+
+message MsgResp {
+    required int32 status = 1;
+    oneof msgnot{
+        MsgNotificacaoInfo info = 2;
+        MsgNotificacaoExec exec = 3;
+    }
+}
+
+message MsgNotificacaoExec {
+    required string ativo = 1;
+    required int32 preco = 2;
+    required int32 quantidade = 3;
+    required int32 tipo = 4;
+}
