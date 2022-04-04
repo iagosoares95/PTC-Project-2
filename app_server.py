@@ -44,7 +44,7 @@ class Ativo:
     @data: a data e horário da última negociação realizada'''
     nome=attr.ib(default='')
     compras=attr.ib(factory=list)
-    vendas=attr.ib(factory=list)
+    vendas = attr.ib(factory=list)
     cotacao=attr.ib(default=0)
     data=attr.ib(factory=datetime.datetime.now)
 
@@ -53,7 +53,7 @@ class Ativo:
           return self.compras
         else:
           return self.vendas
-
+    
     def cria_ordem(self, ordem:Ordem):
         'Cria uma ordem, que deve estar descrita no objeto ordem'
         ordens = self._obtem_lista(ordem.compra)
@@ -62,10 +62,7 @@ class Ativo:
     def cancela(self, ordem:Ordem):
         'Cancela uma ordem, que deve estar descrita no objeto ordem'
         ordens = self._obtem_lista(ordem.compra)
-        ordens.remove(ordem)       
-
-    def cria_cotacao(self, ordem:Ordem):
-      self.cotacao = ordem.preco
+        ordens.remove(ordem)        
     
     def negocia(self)->List[Ordem]:
         '''Negocia as ordens de compra e venda de um ativo
@@ -103,10 +100,6 @@ class Sistema:
         if not ativo in self.ativos:
           self.ativos[ativo] = Ativo(ativo)
         return self.ativos[ativo]
-
-    def cria_ativo(self, ordem:Ordem):
-      obj = self._obtem_ativo(ordem.ativo)
-      obj.cria_cotacao(ordem)
     
     def lanca_ordem(self, ordem:Ordem):
         '''Lança uma ordem de compra ou venda, descrita no objeto ordem
@@ -116,7 +109,7 @@ class Sistema:
         obj.cria_ordem(ordem)
         return obj.negocia()
         
-    def cancela(self, ordem:Ordem):
+    def cancela(self, ordem):
         'Cancela uma ordem, descrita no objeto ordem'
         if not ordem.ativo in self.ativos: raise ValueError('ativo desconhecido')
         self.ativos[ordem.ativo].cancela(ordem)
@@ -125,6 +118,3 @@ class Sistema:
         'Obtem informações sobre um ativo, na forma de um objeto Ativo'
         if not ativo in self.ativos: raise ValueError('ativo desconhecido')
         return self.ativos[ativo]
-
-
-

@@ -15,11 +15,11 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='stockmarket.proto',
-  package='bovespa',
+  package='exemplo',
   syntax='proto2',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11stockmarket.proto\x12\x07\x62ovespa\"+\n\x06Oferta\x12\x12\n\nquantidade\x18\x01 \x02(\x05\x12\r\n\x05preco\x18\x02 \x02(\x05\"?\n\rMsgNegociacao\x12\r\n\x05\x61tivo\x18\x01 \x02(\t\x12\x1f\n\x06oferta\x18\x02 \x02(\x0b\x32\x0f.bovespa.Oferta\"-\n\x07MsgInfo\x12\r\n\x05\x61tivo\x18\x01 \x02(\t\x12\x13\n\x0bnotificacao\x18\x02 \x01(\x08\"1\n\x0fMsgAutenticacao\x12\x0f\n\x07usuario\x18\x01 \x02(\t\x12\r\n\x05senha\x18\x02 \x02(\t\"\xb0\x02\n\nMsgComando\x12(\n\x06\x63ompra\x18\x01 \x01(\x0b\x32\x16.bovespa.MsgNegociacaoH\x00\x12\'\n\x05venda\x18\x02 \x01(\x0b\x32\x16.bovespa.MsgNegociacaoH\x00\x12\x31\n\x0f\x63\x61ncelar_compra\x18\x03 \x01(\x0b\x32\x16.bovespa.MsgNegociacaoH\x00\x12\x30\n\x0e\x63\x61ncelar_venda\x18\x04 \x01(\x0b\x32\x16.bovespa.MsgNegociacaoH\x00\x12 \n\x04info\x18\x05 \x01(\x0b\x32\x10.bovespa.MsgInfoH\x00\x12\x30\n\x0c\x61utenticacao\x18\x06 \x01(\x0b\x32\x18.bovespa.MsgAutenticacaoH\x00\x12\x0f\n\x05saida\x18\x07 \x01(\x08H\x00\x42\x05\n\x03msg\"|\n\x12MsgNotificacaoInfo\x12\r\n\x05\x61tivo\x18\x01 \x02(\t\x12\x14\n\x0cultimo_preco\x18\x02 \x02(\x05\x12 \n\x07\x63ompras\x18\x03 \x03(\x0b\x32\x0f.bovespa.Oferta\x12\x1f\n\x06vendas\x18\x04 \x03(\x0b\x32\x0f.bovespa.Oferta\"}\n\x07MsgResp\x12\x0e\n\x06status\x18\x01 \x02(\x05\x12+\n\x04info\x18\x02 \x01(\x0b\x32\x1b.bovespa.MsgNotificacaoInfoH\x00\x12+\n\x04\x65xec\x18\x03 \x01(\x0b\x32\x1b.bovespa.MsgNotificacaoExecH\x00\x42\x08\n\x06msgnot\"T\n\x12MsgNotificacaoExec\x12\r\n\x05\x61tivo\x18\x01 \x02(\t\x12\r\n\x05preco\x18\x02 \x02(\x05\x12\x12\n\nquantidade\x18\x03 \x02(\x05\x12\x0c\n\x04tipo\x18\x04 \x02(\x05'
+  serialized_pb=b'\n\x11stockmarket.proto\x12\x07\x65xemplo\"+\n\x06Oferta\x12\x12\n\nquantidade\x18\x01 \x02(\x05\x12\r\n\x05preco\x18\x02 \x02(\x05\"?\n\rMsgNegociacao\x12\r\n\x05\x61tivo\x18\x01 \x02(\t\x12\x1f\n\x06oferta\x18\x02 \x01(\x0b\x32\x0f.exemplo.Oferta\"+\n\x07MsgInfo\x12\r\n\x05\x61tivo\x18\x01 \x02(\t\x12\x11\n\tnotificar\x18\x02 \x02(\x08\"1\n\x0fMsgAutenticacao\x12\x0f\n\x07usuario\x18\x01 \x02(\t\x12\r\n\x05senha\x18\x02 \x02(\t\"\xae\x02\n\nMsgComando\x12(\n\x06\x63ompra\x18\x01 \x01(\x0b\x32\x16.exemplo.MsgNegociacaoH\x00\x12\'\n\x05venda\x18\x02 \x01(\x0b\x32\x16.exemplo.MsgNegociacaoH\x00\x12/\n\rcancela_venda\x18\x03 \x01(\x0b\x32\x16.exemplo.MsgNegociacaoH\x00\x12\x30\n\x0e\x63\x61ncela_compra\x18\x04 \x01(\x0b\x32\x16.exemplo.MsgNegociacaoH\x00\x12 \n\x04info\x18\x05 \x01(\x0b\x32\x10.exemplo.MsgInfoH\x00\x12\x30\n\x0c\x61utenticacao\x18\x06 \x01(\x0b\x32\x18.exemplo.MsgAutenticacaoH\x00\x12\x0f\n\x05saida\x18\x07 \x01(\x08H\x00\x42\x05\n\x03msg\"|\n\x12MsgNotificacaoInfo\x12\r\n\x05\x61tivo\x18\x01 \x02(\t\x12\x14\n\x0cultimo_preco\x18\x02 \x02(\x05\x12 \n\x07\x63ompras\x18\x03 \x03(\x0b\x32\x0f.exemplo.Oferta\x12\x1f\n\x06vendas\x18\x04 \x03(\x0b\x32\x0f.exemplo.Oferta\"T\n\x12MsgNotificacaoExec\x12\r\n\x05\x61tivo\x18\x01 \x02(\t\x12\r\n\x05preco\x18\x02 \x02(\x05\x12\x12\n\nquantidade\x18\x03 \x02(\x05\x12\x0c\n\x04tipo\x18\x04 \x02(\x05\"\x82\x01\n\x07MsgResp\x12\x0e\n\x06status\x18\x01 \x02(\x05\x12+\n\x04info\x18\x02 \x01(\x0b\x32\x1b.exemplo.MsgNotificacaoInfoH\x00\x12+\n\x04\x65xec\x18\x03 \x01(\x0b\x32\x1b.exemplo.MsgNotificacaoExecH\x00\x42\r\n\x0bnotificacao'
 )
 
 
@@ -27,21 +27,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _OFERTA = _descriptor.Descriptor(
   name='Oferta',
-  full_name='bovespa.Oferta',
+  full_name='exemplo.Oferta',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='quantidade', full_name='bovespa.Oferta.quantidade', index=0,
+      name='quantidade', full_name='exemplo.Oferta.quantidade', index=0,
       number=1, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='preco', full_name='bovespa.Oferta.preco', index=1,
+      name='preco', full_name='exemplo.Oferta.preco', index=1,
       number=2, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -66,22 +66,22 @@ _OFERTA = _descriptor.Descriptor(
 
 _MSGNEGOCIACAO = _descriptor.Descriptor(
   name='MsgNegociacao',
-  full_name='bovespa.MsgNegociacao',
+  full_name='exemplo.MsgNegociacao',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ativo', full_name='bovespa.MsgNegociacao.ativo', index=0,
+      name='ativo', full_name='exemplo.MsgNegociacao.ativo', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='oferta', full_name='bovespa.MsgNegociacao.oferta', index=1,
-      number=2, type=11, cpp_type=10, label=2,
+      name='oferta', full_name='exemplo.MsgNegociacao.oferta', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -105,22 +105,22 @@ _MSGNEGOCIACAO = _descriptor.Descriptor(
 
 _MSGINFO = _descriptor.Descriptor(
   name='MsgInfo',
-  full_name='bovespa.MsgInfo',
+  full_name='exemplo.MsgInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ativo', full_name='bovespa.MsgInfo.ativo', index=0,
+      name='ativo', full_name='exemplo.MsgInfo.ativo', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='notificacao', full_name='bovespa.MsgInfo.notificacao', index=1,
-      number=2, type=8, cpp_type=7, label=1,
+      name='notificar', full_name='exemplo.MsgInfo.notificar', index=1,
+      number=2, type=8, cpp_type=7, label=2,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -138,27 +138,27 @@ _MSGINFO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=140,
-  serialized_end=185,
+  serialized_end=183,
 )
 
 
 _MSGAUTENTICACAO = _descriptor.Descriptor(
   name='MsgAutenticacao',
-  full_name='bovespa.MsgAutenticacao',
+  full_name='exemplo.MsgAutenticacao',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='usuario', full_name='bovespa.MsgAutenticacao.usuario', index=0,
+      name='usuario', full_name='exemplo.MsgAutenticacao.usuario', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='senha', full_name='bovespa.MsgAutenticacao.senha', index=1,
+      name='senha', full_name='exemplo.MsgAutenticacao.senha', index=1,
       number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -176,63 +176,63 @@ _MSGAUTENTICACAO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=187,
-  serialized_end=236,
+  serialized_start=185,
+  serialized_end=234,
 )
 
 
 _MSGCOMANDO = _descriptor.Descriptor(
   name='MsgComando',
-  full_name='bovespa.MsgComando',
+  full_name='exemplo.MsgComando',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='compra', full_name='bovespa.MsgComando.compra', index=0,
+      name='compra', full_name='exemplo.MsgComando.compra', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='venda', full_name='bovespa.MsgComando.venda', index=1,
+      name='venda', full_name='exemplo.MsgComando.venda', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cancelar_compra', full_name='bovespa.MsgComando.cancelar_compra', index=2,
+      name='cancela_venda', full_name='exemplo.MsgComando.cancela_venda', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cancelar_venda', full_name='bovespa.MsgComando.cancelar_venda', index=3,
+      name='cancela_compra', full_name='exemplo.MsgComando.cancela_compra', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='info', full_name='bovespa.MsgComando.info', index=4,
+      name='info', full_name='exemplo.MsgComando.info', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='autenticacao', full_name='bovespa.MsgComando.autenticacao', index=5,
+      name='autenticacao', full_name='exemplo.MsgComando.autenticacao', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='saida', full_name='bovespa.MsgComando.saida', index=6,
+      name='saida', full_name='exemplo.MsgComando.saida', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -250,47 +250,47 @@ _MSGCOMANDO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='msg', full_name='bovespa.MsgComando.msg',
+      name='msg', full_name='exemplo.MsgComando.msg',
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=239,
-  serialized_end=543,
+  serialized_start=237,
+  serialized_end=539,
 )
 
 
 _MSGNOTIFICACAOINFO = _descriptor.Descriptor(
   name='MsgNotificacaoInfo',
-  full_name='bovespa.MsgNotificacaoInfo',
+  full_name='exemplo.MsgNotificacaoInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ativo', full_name='bovespa.MsgNotificacaoInfo.ativo', index=0,
+      name='ativo', full_name='exemplo.MsgNotificacaoInfo.ativo', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ultimo_preco', full_name='bovespa.MsgNotificacaoInfo.ultimo_preco', index=1,
+      name='ultimo_preco', full_name='exemplo.MsgNotificacaoInfo.ultimo_preco', index=1,
       number=2, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='compras', full_name='bovespa.MsgNotificacaoInfo.compras', index=2,
+      name='compras', full_name='exemplo.MsgNotificacaoInfo.compras', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='vendas', full_name='bovespa.MsgNotificacaoInfo.vendas', index=3,
+      name='vendas', full_name='exemplo.MsgNotificacaoInfo.vendas', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -308,93 +308,42 @@ _MSGNOTIFICACAOINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=545,
-  serialized_end=669,
-)
-
-
-_MSGRESP = _descriptor.Descriptor(
-  name='MsgResp',
-  full_name='bovespa.MsgResp',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='bovespa.MsgResp.status', index=0,
-      number=1, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='info', full_name='bovespa.MsgResp.info', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='exec', full_name='bovespa.MsgResp.exec', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='msgnot', full_name='bovespa.MsgResp.msgnot',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=671,
-  serialized_end=796,
+  serialized_start=541,
+  serialized_end=665,
 )
 
 
 _MSGNOTIFICACAOEXEC = _descriptor.Descriptor(
   name='MsgNotificacaoExec',
-  full_name='bovespa.MsgNotificacaoExec',
+  full_name='exemplo.MsgNotificacaoExec',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ativo', full_name='bovespa.MsgNotificacaoExec.ativo', index=0,
+      name='ativo', full_name='exemplo.MsgNotificacaoExec.ativo', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='preco', full_name='bovespa.MsgNotificacaoExec.preco', index=1,
+      name='preco', full_name='exemplo.MsgNotificacaoExec.preco', index=1,
       number=2, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='quantidade', full_name='bovespa.MsgNotificacaoExec.quantidade', index=2,
+      name='quantidade', full_name='exemplo.MsgNotificacaoExec.quantidade', index=2,
       number=3, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='tipo', full_name='bovespa.MsgNotificacaoExec.tipo', index=3,
+      name='tipo', full_name='exemplo.MsgNotificacaoExec.tipo', index=3,
       number=4, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -412,15 +361,66 @@ _MSGNOTIFICACAOEXEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=798,
-  serialized_end=882,
+  serialized_start=667,
+  serialized_end=751,
+)
+
+
+_MSGRESP = _descriptor.Descriptor(
+  name='MsgResp',
+  full_name='exemplo.MsgResp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='exemplo.MsgResp.status', index=0,
+      number=1, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='info', full_name='exemplo.MsgResp.info', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='exec', full_name='exemplo.MsgResp.exec', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='notificacao', full_name='exemplo.MsgResp.notificacao',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=754,
+  serialized_end=884,
 )
 
 _MSGNEGOCIACAO.fields_by_name['oferta'].message_type = _OFERTA
 _MSGCOMANDO.fields_by_name['compra'].message_type = _MSGNEGOCIACAO
 _MSGCOMANDO.fields_by_name['venda'].message_type = _MSGNEGOCIACAO
-_MSGCOMANDO.fields_by_name['cancelar_compra'].message_type = _MSGNEGOCIACAO
-_MSGCOMANDO.fields_by_name['cancelar_venda'].message_type = _MSGNEGOCIACAO
+_MSGCOMANDO.fields_by_name['cancela_venda'].message_type = _MSGNEGOCIACAO
+_MSGCOMANDO.fields_by_name['cancela_compra'].message_type = _MSGNEGOCIACAO
 _MSGCOMANDO.fields_by_name['info'].message_type = _MSGINFO
 _MSGCOMANDO.fields_by_name['autenticacao'].message_type = _MSGAUTENTICACAO
 _MSGCOMANDO.oneofs_by_name['msg'].fields.append(
@@ -430,11 +430,11 @@ _MSGCOMANDO.oneofs_by_name['msg'].fields.append(
   _MSGCOMANDO.fields_by_name['venda'])
 _MSGCOMANDO.fields_by_name['venda'].containing_oneof = _MSGCOMANDO.oneofs_by_name['msg']
 _MSGCOMANDO.oneofs_by_name['msg'].fields.append(
-  _MSGCOMANDO.fields_by_name['cancelar_compra'])
-_MSGCOMANDO.fields_by_name['cancelar_compra'].containing_oneof = _MSGCOMANDO.oneofs_by_name['msg']
+  _MSGCOMANDO.fields_by_name['cancela_venda'])
+_MSGCOMANDO.fields_by_name['cancela_venda'].containing_oneof = _MSGCOMANDO.oneofs_by_name['msg']
 _MSGCOMANDO.oneofs_by_name['msg'].fields.append(
-  _MSGCOMANDO.fields_by_name['cancelar_venda'])
-_MSGCOMANDO.fields_by_name['cancelar_venda'].containing_oneof = _MSGCOMANDO.oneofs_by_name['msg']
+  _MSGCOMANDO.fields_by_name['cancela_compra'])
+_MSGCOMANDO.fields_by_name['cancela_compra'].containing_oneof = _MSGCOMANDO.oneofs_by_name['msg']
 _MSGCOMANDO.oneofs_by_name['msg'].fields.append(
   _MSGCOMANDO.fields_by_name['info'])
 _MSGCOMANDO.fields_by_name['info'].containing_oneof = _MSGCOMANDO.oneofs_by_name['msg']
@@ -448,77 +448,77 @@ _MSGNOTIFICACAOINFO.fields_by_name['compras'].message_type = _OFERTA
 _MSGNOTIFICACAOINFO.fields_by_name['vendas'].message_type = _OFERTA
 _MSGRESP.fields_by_name['info'].message_type = _MSGNOTIFICACAOINFO
 _MSGRESP.fields_by_name['exec'].message_type = _MSGNOTIFICACAOEXEC
-_MSGRESP.oneofs_by_name['msgnot'].fields.append(
+_MSGRESP.oneofs_by_name['notificacao'].fields.append(
   _MSGRESP.fields_by_name['info'])
-_MSGRESP.fields_by_name['info'].containing_oneof = _MSGRESP.oneofs_by_name['msgnot']
-_MSGRESP.oneofs_by_name['msgnot'].fields.append(
+_MSGRESP.fields_by_name['info'].containing_oneof = _MSGRESP.oneofs_by_name['notificacao']
+_MSGRESP.oneofs_by_name['notificacao'].fields.append(
   _MSGRESP.fields_by_name['exec'])
-_MSGRESP.fields_by_name['exec'].containing_oneof = _MSGRESP.oneofs_by_name['msgnot']
+_MSGRESP.fields_by_name['exec'].containing_oneof = _MSGRESP.oneofs_by_name['notificacao']
 DESCRIPTOR.message_types_by_name['Oferta'] = _OFERTA
 DESCRIPTOR.message_types_by_name['MsgNegociacao'] = _MSGNEGOCIACAO
 DESCRIPTOR.message_types_by_name['MsgInfo'] = _MSGINFO
 DESCRIPTOR.message_types_by_name['MsgAutenticacao'] = _MSGAUTENTICACAO
 DESCRIPTOR.message_types_by_name['MsgComando'] = _MSGCOMANDO
 DESCRIPTOR.message_types_by_name['MsgNotificacaoInfo'] = _MSGNOTIFICACAOINFO
-DESCRIPTOR.message_types_by_name['MsgResp'] = _MSGRESP
 DESCRIPTOR.message_types_by_name['MsgNotificacaoExec'] = _MSGNOTIFICACAOEXEC
+DESCRIPTOR.message_types_by_name['MsgResp'] = _MSGRESP
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Oferta = _reflection.GeneratedProtocolMessageType('Oferta', (_message.Message,), {
   'DESCRIPTOR' : _OFERTA,
   '__module__' : 'stockmarket_pb2'
-  # @@protoc_insertion_point(class_scope:bovespa.Oferta)
+  # @@protoc_insertion_point(class_scope:exemplo.Oferta)
   })
 _sym_db.RegisterMessage(Oferta)
 
 MsgNegociacao = _reflection.GeneratedProtocolMessageType('MsgNegociacao', (_message.Message,), {
   'DESCRIPTOR' : _MSGNEGOCIACAO,
   '__module__' : 'stockmarket_pb2'
-  # @@protoc_insertion_point(class_scope:bovespa.MsgNegociacao)
+  # @@protoc_insertion_point(class_scope:exemplo.MsgNegociacao)
   })
 _sym_db.RegisterMessage(MsgNegociacao)
 
 MsgInfo = _reflection.GeneratedProtocolMessageType('MsgInfo', (_message.Message,), {
   'DESCRIPTOR' : _MSGINFO,
   '__module__' : 'stockmarket_pb2'
-  # @@protoc_insertion_point(class_scope:bovespa.MsgInfo)
+  # @@protoc_insertion_point(class_scope:exemplo.MsgInfo)
   })
 _sym_db.RegisterMessage(MsgInfo)
 
 MsgAutenticacao = _reflection.GeneratedProtocolMessageType('MsgAutenticacao', (_message.Message,), {
   'DESCRIPTOR' : _MSGAUTENTICACAO,
   '__module__' : 'stockmarket_pb2'
-  # @@protoc_insertion_point(class_scope:bovespa.MsgAutenticacao)
+  # @@protoc_insertion_point(class_scope:exemplo.MsgAutenticacao)
   })
 _sym_db.RegisterMessage(MsgAutenticacao)
 
 MsgComando = _reflection.GeneratedProtocolMessageType('MsgComando', (_message.Message,), {
   'DESCRIPTOR' : _MSGCOMANDO,
   '__module__' : 'stockmarket_pb2'
-  # @@protoc_insertion_point(class_scope:bovespa.MsgComando)
+  # @@protoc_insertion_point(class_scope:exemplo.MsgComando)
   })
 _sym_db.RegisterMessage(MsgComando)
 
 MsgNotificacaoInfo = _reflection.GeneratedProtocolMessageType('MsgNotificacaoInfo', (_message.Message,), {
   'DESCRIPTOR' : _MSGNOTIFICACAOINFO,
   '__module__' : 'stockmarket_pb2'
-  # @@protoc_insertion_point(class_scope:bovespa.MsgNotificacaoInfo)
+  # @@protoc_insertion_point(class_scope:exemplo.MsgNotificacaoInfo)
   })
 _sym_db.RegisterMessage(MsgNotificacaoInfo)
-
-MsgResp = _reflection.GeneratedProtocolMessageType('MsgResp', (_message.Message,), {
-  'DESCRIPTOR' : _MSGRESP,
-  '__module__' : 'stockmarket_pb2'
-  # @@protoc_insertion_point(class_scope:bovespa.MsgResp)
-  })
-_sym_db.RegisterMessage(MsgResp)
 
 MsgNotificacaoExec = _reflection.GeneratedProtocolMessageType('MsgNotificacaoExec', (_message.Message,), {
   'DESCRIPTOR' : _MSGNOTIFICACAOEXEC,
   '__module__' : 'stockmarket_pb2'
-  # @@protoc_insertion_point(class_scope:bovespa.MsgNotificacaoExec)
+  # @@protoc_insertion_point(class_scope:exemplo.MsgNotificacaoExec)
   })
 _sym_db.RegisterMessage(MsgNotificacaoExec)
+
+MsgResp = _reflection.GeneratedProtocolMessageType('MsgResp', (_message.Message,), {
+  'DESCRIPTOR' : _MSGRESP,
+  '__module__' : 'stockmarket_pb2'
+  # @@protoc_insertion_point(class_scope:exemplo.MsgResp)
+  })
+_sym_db.RegisterMessage(MsgResp)
 
 
 # @@protoc_insertion_point(module_scope)

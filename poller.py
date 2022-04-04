@@ -3,6 +3,18 @@
 import selectors
 import time
 
+class ExpiredHandlerError(Exception):
+
+     def __init__(self, msg=''):
+        Exception.__init__(self)
+        self._msg = msg
+        
+     def __repr__(self):
+       return self._msg
+        
+     def __str__(self):
+       return repr(self)
+       
 class Callback:
   '''Classe Callback:
         
@@ -29,13 +41,14 @@ class Callback:
       self._enabled_to = True
       self._reloaded = False
 
-  def handle(self):
+  def handle(self, poller_obj=None):
       '''Trata o evento associado a este callback. Tipicamente 
       deve-se ler o fileobj e processar os dados lidos. Classes
-      derivadas devem sobrescrever este método.'''
+      derivadas devem sobrescrever este método. Se poller_obj for definido, 
+      é uma referência ao próprio poller'''
       pass
 
-  def handle_timeout(self):
+  def handle_timeout(self, poller_obj=None):
       '''Trata um timeout associado a este callback. Classes
       derivadas devem sobrescrever este método.'''
       pass
@@ -104,6 +117,14 @@ class Poller:
     'Registra um callback'
     if cb.isTimer and not cb in self.cbs_to: self.cbs_to.append(cb)
     else: self.cbs.add(cb)
+    
+  def remove(self, cb):
+    'Remove um callback'
+    try:
+      if cb.isTimer: self.cbs_to.remove(cb)
+      else: del self.cbs[cb]
+    except:
+      pass
 
   def _compareTimeout(self, cb, cb_to):
     if not cb.timeout_enabled: return cb_to
@@ -156,15 +177,21 @@ class Poller:
     fired = set()
     if not eventos: # timeout !
       if cb_to != None:
-          fired.add(cb_to)
-          cb_to.handle_timeout()
-          cb_to.reload_timeout()
+          try:
+              cb_to.handle_timeout(self)
+              cb_to.reload_timeout()
+              fired.add(cb_to)
+          except ExpiredHandlerError as e:
+              self.remove(cb_to)
     else:
       for key,mask in eventos:
         cb = key.data # este é o callback !
-        fired.add(cb)
-        cb.handle()
-        cb.reload_timeout()
+        try:
+            cb.handle(self)
+            cb.reload_timeout()
+            fired.add(cb)
+        except ExpiredHandlerError as e:
+            self.remove(cb)
     dt = time.time() - t1
     for cb in self.cbs_to:
       if not cb in fired: cb.update(dt)

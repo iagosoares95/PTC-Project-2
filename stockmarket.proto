@@ -1,57 +1,68 @@
 syntax = "proto2";
+ 
+package exemplo;
 
-package bovespa;
-
+// serve para ordens de compra, venda
+// e cancelamento
 message Oferta {
-    required int32 quantidade = 1;
-    required int32 preco = 2;
+  required int32 quantidade = 1;
+  required int32 preco = 2; // em centavos
 }
 
+// tipo de comando para ordens de compra, venda, e cancelamento de ordem
 message MsgNegociacao {
-    required string ativo = 1;
-    required Oferta oferta = 2;
+  required string ativo = 1;
+  optional Oferta oferta = 2;
 }
 
+// tipo de comando para obtenção de informação sobre ativo
 message MsgInfo {
-    required string ativo = 1;
-    optional bool notificacao = 2;
+  required string ativo = 1;
+  required bool notificar = 2;
 }
 
+// tipo de comando para autenticação
 message MsgAutenticacao {
-    required string usuario = 1;
-    required string senha = 2;
+  required string usuario = 1;
+  required string senha = 2;
 }
-
+ 
+// mensagem de comando genérica: note que ela na verdade apenas encapsula
+// mensagens de comandos específicos
 message MsgComando {
-    oneof msg {
-        MsgNegociacao compra = 1;
-        MsgNegociacao venda = 2;
-        MsgNegociacao cancelar_compra = 3;
-        MsgNegociacao cancelar_venda = 4;
-        MsgInfo info = 5;
-        MsgAutenticacao autenticacao = 6;
-        bool saida = 7;
-    }
+   oneof msg {
+     MsgNegociacao compra = 1;
+     MsgNegociacao venda = 2;
+     MsgNegociacao cancela_venda = 3;
+     MsgNegociacao cancela_compra = 4; 
+     MsgInfo info = 5;  
+     MsgAutenticacao autenticacao = 6;
+     bool saida = 7;
+   }
 }
 
+// resposta para obtenção de informações sobre um ativo
 message MsgNotificacaoInfo {
-    required string ativo = 1;
-    required int32 ultimo_preco = 2;
-    repeated Oferta compras = 3;
-    repeated Oferta vendas = 4;
+  required string ativo = 1;
+  required int32 ultimo_preco = 2;
+  repeated Oferta compras = 3;
+  repeated Oferta vendas = 4;
 }
 
-message MsgResp {
-    required int32 status = 1;
-    oneof msgnot{
-        MsgNotificacaoInfo info = 2;
-        MsgNotificacaoExec exec = 3;
-    }
-}
-
+// mensagem de notificação
 message MsgNotificacaoExec {
-    required string ativo = 1;
-    required int32 preco = 2;
-    required int32 quantidade = 3;
-    required int32 tipo = 4;
+  required string ativo = 1;
+  required int32 preco = 2;
+  required int32 quantidade = 3;
+  required int32 tipo = 4; // compra, venda ou cancelamento ???
+}
+
+// Mensagem de resposta genérica
+message MsgResp {
+  required int32 status = 1;
+  oneof notificacao { // pode ser vazia, ou informações sobre ativo, ou 
+                      // notificação de execução de ordem
+    MsgNotificacaoInfo info = 2;
+    MsgNotificacaoExec exec = 3;
+  }
 }
